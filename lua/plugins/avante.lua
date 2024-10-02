@@ -5,7 +5,11 @@ return {
     lazy = false,
     version = false, -- set this if you want to always pull the latest change
     opts = {
-      -- add any opts here
+      windows = {
+        sidebar_header = {
+          rounded = false,
+        },
+      },
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
     build = "make",
