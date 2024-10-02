@@ -17,3 +17,9 @@ vim.api.nvim_set_keymap("n", "<M-S-PageUp>", ":BufferLineMovePrev<CR>", { norema
 
 -- Map Alt+Shift+PgDn to move the current buffer to the right
 vim.api.nvim_set_keymap("n", "<M-S-PageDown>", ":BufferLineMoveNext<CR>", { noremap = true, silent = true })
+
+-- Old Gdiff from fugitive, now with diffview plugin
+vim.api.nvim_create_user_command("Gdiff", function(opts)
+  local target_commit = opts.args or "HEAD"
+  vim.cmd("DiffviewOpen " .. target_commit)
+end, { nargs = "?" })
