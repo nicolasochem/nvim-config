@@ -1,4 +1,4 @@
--- Keymaps are automatically loaded on the VeryLazy event
+-- Keymaps are automatically loaded on the VeryLazy event aa
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 --
@@ -17,3 +17,6 @@ vim.api.nvim_set_keymap("n", "<M-S-PageUp>", ":BufferLineMovePrev<CR>", { norema
 
 -- Map Alt+Shift+PgDn to move the current buffer to the right
 vim.api.nvim_set_keymap("n", "<M-S-PageDown>", ":BufferLineMoveNext<CR>", { noremap = true, silent = true })
+
+-- Map :Gblame to :Git blame
+vim.api.nvim_create_user_command("Gblame", "Git blame", {})
